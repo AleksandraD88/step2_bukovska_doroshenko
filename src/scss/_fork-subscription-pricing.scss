@@ -1,0 +1,210 @@
+.fork-subscription-pricing {
+    padding: 0 10px 0 10px;
+    background: url(../img/background-pricing.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    @include flex-center-jc ();
+    flex-direction: column;
+
+    &-headline {
+        color: $color-white;
+        text-align: center;
+        font-size: 48px;
+        font-weight: 700;
+        padding-top: 83px;
+        padding-bottom: 61px;}
+
+    &-list {
+        @include flex-center-jc ();
+        max-width: 1200px;
+        padding: 0 10px 25px 10px;
+        &-item {
+            width: 257px;
+            height: 457px;
+            padding-right: 15px;
+            &-div {
+                height: 97px;
+                background: rgba(255, 255, 255, 0.05);
+                color: $color-white;
+                text-align: center;
+                font-size: 24px;
+                @include flex-center-jc ();
+                text-transform: uppercase;}
+
+            &-descr-div {
+                height: 360px;
+                background: rgba(255, 255, 255, 0.109);
+                @include flex-center-jc ();
+                flex-direction: column;
+                text-align: center;
+                &-price {
+                    color: $color-white;
+                    font-size: 60px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    padding-top: 30px;}
+
+                &-mounth {
+                    padding-top: 20px;
+                    color: $color-white;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    position: relative;}
+
+                &-mounth::before {
+                    content: '';
+                    position: absolute;
+                    width: 60px;
+                    height: 5px;
+                    top: 70px;
+                    left: 16px;
+                    background-color: $line-color;}
+
+                &-benefits {
+                    padding-top: 70px;
+                    padding-bottom: 36px;
+                    font-size: 16px;
+                    color: $color-white;}
+
+                &-button {
+                    padding-bottom: 36px;
+                    width: 163px;
+                    height: 45px;
+                    background: rgba(255, 255, 255, 0.15);
+                    border: none;
+                    border-radius: 30px;
+                    color: $color-white;
+                    text-align: center;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+
+                    &-text {
+                        padding: 14px;
+                    }
+                }
+            }
+        }
+        .third-li {
+            width: 299px;
+            height: 560px;
+            &-back {
+                background: rgba(0, 0, 0, 0.35);
+                height: 111px;}
+            &-ground {
+                height: 449px;
+                background: rgba(70, 48, 72, 0.839);
+                justify-content: start;
+                &-first {
+                    font-size: 82px;}
+                &-second {
+                    padding: 91px 0 83px 0;}}}
+        .last-item {padding-left: 15px;}}
+
+        @media (max-width: 1148px) {
+            .fork-subscription-pricing-list-item {width: 220px; height: 457px;}
+            .third-li {
+                width: 252px;
+                height: 560px;
+                justify-self: end;}}
+        
+            @media (max-width: $width-tablet) {
+                .fork-subscription-pricing {
+                    background: url(../img/background-pricing-second.png);}
+        
+                &-headline {
+                    font-size: 42px;
+                    padding-bottom: 0;
+                }
+        
+                &-list {
+                    display: grid;
+                    grid-template-columns: repeat(2, 299px);
+                    grid-template-rows: repeat(2, 560px);
+                    row-gap: 30px;
+                    column-gap: 25px;
+        
+                    .fork-subscription-pricing-list-item {
+                        padding-right: 0;
+                        width: 257px;
+                        height: 457px;
+                    }
+                    .third-li {
+                        width: 299px;
+                        height: 560px;}
+        
+                }
+                .last-item {
+                    padding: 0;
+                    align-self: center;
+                }
+                .first {
+                    justify-self: end;
+                    align-self: self-end;
+                }
+        
+                .second {
+                    align-self: self-end;
+                }
+            }
+        
+            @media (max-width: 650px) {
+            .fork-subscription-pricing-list {
+            grid-template-columns: repeat(2, 220px);
+            grid-template-rows: repeat(2, 560px);}
+            .fork-subscription-pricing-list-item {
+            width: 200px;
+            height: 457px;
+            &-div {font-size: 18px;} }
+            .third-li {
+            width: 220px;
+            height: 560px;
+            justify-self: end;}}
+        
+            @media (max-width: $width-mobile) {
+                .fork-subscription-pricing {
+                    background: url(../img/background-pricing-second.png);
+                }
+        
+                &-headline {
+                    font-size: 28px;
+                    padding-bottom: 32px;
+                    width: 320px;
+                }
+        
+                .fork-subscription-pricing-list {
+                    display: grid;
+                    grid-template-columns: 299px;
+                    grid-template-rows: 457px 457px 560px 457px;
+                    gap: 10;
+        
+                    .fork-subscription-pricing-list-item {
+                        padding: 0;
+                        justify-self: center;
+                        align-self: center;
+                        width: 257px;
+                        height: 457px;
+                    }
+                }
+                .third-li {
+                    width: 299px;
+                    height: 560px;}
+                .last-item {
+                    padding: 0;
+                    align-self: center;
+                }
+        
+                .first {
+                    justify-self: center;
+                    align-self: center;
+                }
+        
+                .second {
+                    align-self: center;
+                }
+            }
+        
+        }
+

@@ -1,0 +1,50 @@
+
+@media (width < $width-mobile) {
+    .header {
+        &__burger{
+            display: block;
+            position: relative;
+            width: 26px;
+            z-index: 1;
+            right: 6px;
+        }
+        &__burger span {
+            @include burger;
+            width: 26px;
+            left: 25%;
+            top: 20px;
+        }
+        &__burger::before {
+            content: '';
+            @include burger;
+            top: 12px;
+            left: 66%;
+            width: 15px;
+            z-index: 1;
+        }
+        &__burger::after {
+            content: '';
+            @include burger;
+            width: 26px;
+            top: 28px;
+            left: 25%;
+        }
+        &__burger.active::before {
+            transform: rotate(45deg);
+            top: 16px;
+            left: 10px;
+            width: 26px;
+            height: 2px;
+        }
+        &__burger.active::after {
+            transform: rotate(-45deg);
+            top: 16px;
+            height: 2px;
+            left: 10px;
+        }
+        &__burger.active span {
+            transform: scale(0);
+        }
+            
+    }     
+}

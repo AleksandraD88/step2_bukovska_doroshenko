@@ -1,0 +1,19 @@
+@import 'reset';
+@import 'mixin';
+@import 'header';
+@import 'burger';
+@import 'people';
+@import 'fork-subscription-pricing';
+@import 'revolutionary-editor';
+@import 'here-is-what-you-get';
+
+body {
+    font-family: 'Montserrat', sans-serif;    
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}

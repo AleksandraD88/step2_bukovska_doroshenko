@@ -1,0 +1,173 @@
+.here-is-what-you {
+    background-color: $background-get-color;
+
+    &-get {
+        padding: 0 10px 0 10px;
+        @include flex-between ();
+        max-width: 1200px;
+        margin: 0 auto;
+
+        &-first-div {
+            max-width: 520px;
+            padding: 8px 20px 33px 30px;
+            @include flex-between ();
+            flex-direction: column;
+
+            &-list {
+                &-item {
+                    @include flex-between ();
+                    padding-bottom: 35px;
+                    max-width: 520px;
+
+                    &-text {
+                        text-align: start;
+                        max-width: 400px;
+
+                        &-first {
+                            color: $revolution-descr-color;
+                            font-size: 16px;
+                            padding-bottom: 17px;
+                        }
+
+                        &-second {
+                            color: $color-grey;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-second-div {
+            padding: 95px 0 33px 0;
+            max-width: 610px;
+            @include flex-between ();
+            flex-direction: column;
+
+            &-text {
+                color: $color-violet;
+                font-size: 40px;
+                font-weight: 700;
+                padding-bottom: 19px;
+                padding-right: 65px;
+            }
+
+            &-img {
+                max-width: 610px;
+                height: 519px;
+            }
+        }
+
+        &-hidden {
+            display: none;
+        }
+
+        &-mobile {
+            display: none;
+        }
+
+        &-div-inspector {
+            display: flex;
+            justify-content: end;
+        }
+    }
+
+    @media (max-width: $width-tablet) {
+        * {
+            background: #FFF;
+        }
+
+        &-get {
+            max-width: $width-tablet;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .here-is-what-you-get-second-div-img {
+            display: none;
+        }
+
+        .here-is-what-you-get-first-div {
+            max-width: $width-tablet
+        }
+
+        .here-is-what-you-get-first-div-list-item {
+            max-width: $width-tablet
+        }
+
+        .here-is-what-you-get-second-div-text {
+            padding-right: 0;
+        }
+
+        .here-is-what-you-get-first-div-list-item-text {
+            max-width: 550px;
+            padding-left: 14px;
+        }
+
+        .here-is-what-you-get-hidden {
+            @include flex-end ();
+            max-width: $width-tablet;
+        }
+    }
+
+
+    @media (max-width: $width-mobile) {
+        * {
+            background: #FFF;
+        }
+
+        .here-is-what-you {
+            max-width: $width-mobile;
+        }
+
+        .here-is-what-you-get-first-div {
+            max-width: $width-mobile;
+        }
+
+        .here-is-what-you-get-second-div {
+            max-width: $width-mobile;
+        }
+
+        &-get {
+            max-width: $width-mobile;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .here-is-what-you-get-second-div-img {
+            display: none;
+        }
+
+        .here-is-what-you-get-second-div-text {
+            padding-right: 0;
+            font-size: 32px;
+            width: 240px;
+            text-align: center;
+        }
+
+        .here-is-what-you-get-first-div-list-item {
+            max-width: 269px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .here-is-what-you-get-first-div-list-item-text {
+            text-align: center;
+            max-width: 330px;
+        }
+
+        .here-is-what-you-get-first-div-list-item-img {
+            padding-bottom: 27px;
+        }
+
+        .here-is-what-you-get-mobile {
+            @include flex-end ();
+            max-width: $width-mobile;
+        }
+
+        .here-is-what-you-get-hidden {
+            display: none;
+        }
+    }
+
+}

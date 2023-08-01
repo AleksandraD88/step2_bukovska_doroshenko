@@ -1,0 +1,291 @@
+@import 'mixin';
+@import 'reset';
+@import 'variable';
+
+.header {
+    background-image: url(../img/img\ 1.png);
+    min-height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    padding-bottom: 80px;
+    &__menu-wrap {
+        @include flex-center;
+        justify-content: space-between;
+        gap: 20px;
+        height: 100px;
+        padding: 0 10px;
+    }
+    &__logo {
+        @include flex-center;
+        gap: 17px;
+        cursor: pointer;
+    }
+
+    &__logo-img {
+        background-image: url(../img/icon/Logo\ 1.png);
+        width: 43px;
+        height: 41px;
+    }
+    &__logo span {
+        color: $color-violet;
+        @include lato-700;
+        font-size: 24px;
+        line-height: 16px; 
+        text-transform: uppercase;
+    }
+    &__nav-wrap {
+        @include flex-center;
+        gap: 48px;
+    }
+    &__nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 48px;
+    }
+    &__nav ul > li > a {
+        color: $color-violet;
+        @include monserrat-700;
+        font-size: 16px;
+        line-height: 17px;
+        cursor: pointer;
+    }
+    &__nav-btn {
+        background: $color-violet;
+        padding: 11px 40px;
+        border-radius: 40px;
+    }
+    &__nav-btn a {
+        color: $color-white;
+        @include monserrat-700;
+        font-size: 16px;
+        line-height: 17px;
+    }
+    &__burger {
+        display: none;
+    }
+    &__content p {
+        text-align: center;
+    }
+    &__content p:first-child {
+        color: $color-white;
+        @include monserrat-700;
+        font-size: 82px;
+        line-height: 82px;
+        padding-top: 83px;
+    }
+    &__content p:nth-child(2) {
+        color: $color-violet;
+        @include lato-400;
+        font-size: 30px;
+        line-height: 30px;
+        padding-top: 16px;
+    }
+    &__content p:last-child {
+        color: $color-grey;
+        @include monserrat-400;
+        font-size: 16px;
+        line-height: 16px; 
+        text-transform: uppercase;
+        padding-top: 19px;
+    }
+    // HOVER
+    &__logo:hover div {
+        background-image: url(../img/icon/logo-hover\ 1.png);
+    }
+    &__logo:hover span {
+        color: $color-white;
+    }
+    &__nav ul > li > a:hover {
+        color: $color-white;
+    }
+    &__nav-btn:hover {
+        background: $color-white;
+    }
+    &__nav-btn:hover a {
+        color: $color-violet;
+    }
+}    
+.header__bottom {
+    position: absolute;
+    width: 100%;
+    top: 848px;
+    &-wrap {
+        @include flex-center;
+        flex-direction: column;
+        gap: 19px;
+    }
+    &-btn {
+        width: 390px;
+        height: 62px;
+        background: $color-violet;
+        border-radius: 40px;
+        @include flex-center;
+        justify-content: center;        
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+    &-btn a {
+        @include monserrat-700;
+        font-size: 21px;
+        line-height: 22px;
+        color: $color-white;
+    }
+    &-wrap p {
+        color: $color-grey;
+        @include monserrat-400;
+        font-size: 14px;
+        line-height: 15px;
+        text-align: center;
+    }
+    // HOVER
+    &-btn:hover {
+        background: $color-white;
+        border: 2px $color-violet solid;
+    }
+    &-btn:hover a {
+        color: $color-violet;
+    }
+}
+
+// MEDIA < 993
+.header {
+    @media (width < $width-tablet) {
+        &__menu-wrap {
+            background-color: #27262A;
+            height: 118px;
+            padding: 22px 10px 0 10px;
+            align-items: start;
+            position: relative;
+            box-sizing: border-box;
+
+        }
+        &__nav {
+            position: absolute;
+            top: 83px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        &__nav ul {
+            width: auto;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 27px;
+        }
+        &__content {
+            padding: 0 10px;
+        }
+        &__content p:first-child {
+            font-size: 72px;
+            line-height: 72px;
+            padding-top: 68px;
+        }
+        &__content p:nth-child(2) {
+            font-size: 24px;
+            line-height: 24px;
+        }
+        &__content p:last-child {
+            font-size: 14px;
+            line-height: 14px; 
+            padding-top: 19px;
+        }
+    }
+}
+
+// MEDIA < 768
+.header {
+    @media (width < $width-mobile) {
+        &__menu-wrap {
+            height: 103px;
+            padding: 33px 10px 0 10px;
+        }
+        &__logo span {
+            display: none;
+        }
+        &__nav-btn {
+            padding: 11px 27px;
+        }
+        &__nav-btn a {
+            font-size: 15px;
+            line-height: 15px;
+        }
+        &__nav {
+            display: none;
+        }
+        // NAV BURGER
+        &__nav.open {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            z-index: 1;
+            background-color: #333333;
+            max-width: 293px;
+        }
+        &__nav ul {
+            flex-direction: column;
+            gap: 0;
+        }
+        &__nav ul > li {
+            padding: 36px 0 36px 36px;
+            position: relative;
+        }
+        &__nav ul > li:not(:last-child) {
+            border-bottom: 2px solid #3b3b3b;
+        }
+        &__nav ul > li > a {
+            color: $color-white;
+            @include monserrat-400;
+            font-size: 26px;
+            line-height: 26px;
+            cursor: pointer;
+            &:focus {
+                color: $color-violet;
+            }
+            &::before {
+                content: '';
+                width: 8px;
+                height: 53px;
+                background-color: $color-violet;
+                position: absolute;
+                top: 21px;
+                left: 2px;
+                z-index: 1;
+                transform: scale(0);
+                transition: all 0.4s ease;
+            }
+            &:focus::before {
+                transform: scale(0.9);
+            }    
+        }
+        // NAV CONTENT
+        &__content p:first-child {
+            font-size: 48px;
+            line-height: 48px;
+            padding-top: 49px;
+        }
+        &__content p:nth-child(2) {
+            @include monserrat-400;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        
+    }
+}
+
+.header__bottom {
+    @media (width < $width-mobile) {
+        top: 856px;
+        &-btn {
+            width: 290px;
+            height: 45px;            
+        }
+        &-btn a {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}
