@@ -1,0 +1,1 @@
+document.querySelector(".header__burger").addEventListener("click",function(e){e.currentTarget.classList.toggle("active"),document.querySelector(".header__nav").classList.toggle("open")});
